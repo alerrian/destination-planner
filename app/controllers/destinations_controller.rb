@@ -6,6 +6,8 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    weather_search = WeatherSearch.new(@destination.zip)
+    @current_weather = weather_search.get_weather
   end
 
   def new
